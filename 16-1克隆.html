@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<div id="guoDiv"> 
+<span>1</span> 
+<span>2</span> 
+<span>3</span> 
+    </div> 
+<script type="text/javascript">
+// cloneNode(a)方法接受一个布尔值参数,表示是否深拷贝 
+// true:表示执行深拷贝,复制本节点以及整个子节点树. 
+// false:浅拷贝.只复制节点本身. 
+var oDiv = document.getElementById("guoDiv"); 
+var deepList = oDiv.cloneNode(true); //拷贝子节点 
+alert(deepList.childNodes.length); //3或7(兼容性问题,所以结果不一样) 
+console.dir(deepList);
+var showList = oDiv.cloneNode(false); //只拷贝当前元素的引用 
+alert(showList.childNodes.length); //0 
+console.dir(showList);
+</script>
+
+</body>
+</html>
